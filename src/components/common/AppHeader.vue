@@ -1,0 +1,560 @@
+<template>
+  <header>
+    <div class="nav-wrap">
+      <div class="nav-submenu">
+        <input type="checkbox" id="menuicon" />
+        <label for="menuicon" class="total">
+          <span></span>
+        </label>
+
+        <div class="sidebar-wrap">
+          <div class="sidebar">
+            <div class="sub-event">
+              <img
+                src="@/assets/image/banner/sub-event.png"
+                width="400"
+                height="400"
+                alt="서브이벤트"
+              />
+            </div>
+            <div>
+              <div class="sub_language">
+                <select>
+                  <option value="SOUTH KOREA">SOUTH KOREA</option>
+                  <option value="CANADA">CANADA</option>
+                  <option value="FPANCE">FPANCE</option>
+                  <option value="GERMANY">GERMANY</option>
+                  <option value="ITALY">ITALY</option>
+                  <option value="NETHERLANDS">NETHERLANDS</option>
+                  <option value="SPAIN">SPAIN</option>
+                  <option value="SWEDEN">SWEDEN</option>
+                  <option value="USA">USA</option>
+                  <option value="SHOW ALL">SHOW ALL</option>
+                </select>
+              </div>
+              <div class="sub_menu">
+                <ul>
+                  <li>
+                    <a href="#">HEADPHONES</a>
+                    <ul class="sub_menu-category">
+                      <li><a href="#">OVER-EAR</a></li>
+                      <li><a href="#">ON-EAR</a></li>
+                      <li><a href="#">TRUE WIRELESS</a></li>
+                      <li><a href="#">IN-EAR</a></li>
+                      <li><a href="#">NOISE CANCELLING</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">SPEAKERS</a>
+                    <ul class="sub_menu-category">
+                      <li><a href="#">BLUETOOTH</a></li>
+                      <li><a href="#">PORTABLE</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">ACCESSORIES</a></li>
+                  <li>
+                    <a href="#">BACKSTAGE</a>
+                    <ul class="sub_menu-category">
+                      <li><a href="#">GUIDED BY MUSIC</a></li>
+                      <li><a href="#">HOMEWARD BOUND</a></li>
+                      <li><a href="#">ON THE ROAD</a></li>
+                      <li><a href="#">LIFE IN STEREO</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <!--sub_menu-->
+              </div>
+
+              <div class="sub_app-wrap">
+                <p>
+                  MARSHALL BLUETOOTH APP<br />
+                  DOWNLOAD
+                </p>
+                <div class="app-button">
+                  <a
+                    href="https://apps.apple.com/se/app/marshall-bluetooth/id1351654161"
+                    target="_blank"
+                    ><img
+                      alt="ios"
+                      height="40"
+                      src="https://www.marshallheadphones.com/on/demandware.static/-/Library-Sites-SharedLibrary-Marshall/default/dwefa71c39/images/categories/headphones/monitor-ii-anc/both/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                      width="130"
+                  /></a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.zoundindustries.marshallbt&amp;hl=en"
+                    target="_blank"
+                    ><img
+                      alt="google"
+                      height="40"
+                      src="https://www.marshallheadphones.com/on/demandware.static/-/Library-Sites-SharedLibrary-Marshall/default/dwa9e725e5/images/categories/headphones/monitor-ii-anc/both/google-play-badge_new.svg"
+                      width="130"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--sidebar-->
+      </div>
+      <!--nav-submenu-->
+
+      <div class="menu-logo">
+        <h1>
+          <a href="#index.html"
+            ><img
+              src="@/assets/image/logo.png"
+              alt="logo"
+              width="200"
+              height="51"
+          /></a>
+        </h1>
+      </div>
+      <!--menu-logo-->
+
+      <div class="menu-icon">
+        <ul>
+          <li>
+            <form class="search-form">
+              <input
+                type="text"
+                placeholder="Search"
+                maxlength="20"
+                minlength="2"
+                autofocus
+                autocomplete="off"
+              />
+              <button type="submit">
+                <img
+                  src="@/assets/image/icons/search_.png"
+                  alt="검색버튼"
+                  width="20"
+                  height="20"
+                />
+              </button>
+            </form>
+          </li>
+
+          <li>
+            <a href="#"
+              ><img
+                src="@/assets/image/icons/cart_.png"
+                alt="장바구니"
+                width="25"
+                height="25"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="@/assets/image/icons/user.png"
+                alt="마이페이지"
+                width="25"
+                height="25"
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <!--menu-icon-->
+    </div>
+  </header>
+  <!--nav_wrap fixed고정-->
+</template>
+<script>
+import $ from "jquery";
+export default {
+  name: "Header",
+  mounted() {
+    //서브메뉴
+    $(".total").click(function() {
+      $(this).toggleClass("on");
+    });
+
+    $(".total").click(function() {
+      $(".sidebar-wrap").fadeToggle();
+    });
+
+    //서브메뉴 스크롤
+    $(".sidebar-wrap").on("scroll touchmove mousewheel", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  },
+};
+</script>
+<style scoped>
+header {
+  background: rgba(15, 15, 16, 0);
+  width: 100vw;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.35s;
+}
+
+/*nav-wrap*/
+
+.nav-wrap {
+  width: 92.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wrap > div:nth-child(1) {
+  flex: 1;
+}
+
+.nav-wrap > div:nth-child(2) {
+  flex: 9;
+}
+
+.nav-wrap > div:nth-child(3) {
+  align-items: flex-end;
+}
+
+/*nav search*/
+
+.menu-icon ul {
+  width: 22.5rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon li:first-child {
+  width: 17rem;
+  height: 2rem;
+  position: relative;
+}
+
+.menu-icon li {
+  height: 1.25rem;
+}
+
+.search-form input {
+  border: none;
+  width: 17rem;
+  background: rgba(255, 255, 255, 0.05);
+  height: 2rem;
+  border-radius: 10rem;
+  text-indent: 1.25rem;
+  letter-spacing: 0.1rem;
+  outline: none;
+  color: #fff;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.25rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/*menuicon*/
+
+input[id="menuicon"] {
+  display: none;
+}
+
+.total {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  text-decoration: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.total span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0.15rem;
+  background: rgba(255, 255, 255, 1);
+  color: transparent;
+  transition: all 0.5s;
+  border-radius: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.total span:before,
+.total span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.15rem;
+  background: rgba(255, 255, 255, 1);
+  transition: all 0.5s;
+  border-radius: 0.5rem;
+}
+
+.total span:before {
+  top: -0.5rem;
+}
+
+.total span:after {
+  top: 0.5rem;
+}
+
+.total.on span {
+  background: rgba(255, 255, 255, 0);
+}
+
+.total.on span:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.total.on span:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/*checked*/
+input[id="menuicon"]:checked + label {
+  z-index: 2;
+}
+
+input[id="menuicon"]:checked + label span {
+  background: #222;
+}
+
+input[id="menuicon"]:checked + label span:before {
+  background: #fff;
+}
+
+input[id="menuicon"]:checked + label span:after {
+  background: #fff;
+}
+
+input[id="menuicon"]:checked + label + .sidebar-wrap {
+  display: block;
+}
+
+.sidebar-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 16, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar > div {
+  width: 85rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*sub-event*/
+.sub-event {
+  position: absolute;
+  top: -25%;
+}
+
+.sub-event img {
+  animation: rotate_image 25s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*sub_language*/
+.sub_language {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+}
+
+.sub_language > select {
+  width: 10rem;
+  height: 2rem;
+  line-height: 2rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.sub_language > select > option {
+  color: #252525;
+  font-size: 0.75rem;
+}
+
+/*sub_menu*/
+.sub_menu {
+  width: 65rem;
+  height: auto;
+  position: absolute;
+  top: 46%;
+}
+
+.sub_menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub_menu ul li {
+  line-height: 3.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.sub_menu ul li a {
+  color: #fff;
+  font-size: 2rem;
+}
+
+/*sub_menu-category*/
+
+.sub_menu ul ul {
+  width: 15rem;
+  display: none;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sub_menu ul li:hover ul {
+  display: block;
+  padding: 1rem 0;
+}
+
+.sub_menu .sub_menu-category li {
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.sub_menu .sub_menu-category li a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/*sub_app-wrap*/
+.sub_app-wrap {
+  width: 30rem;
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 6.25rem;
+}
+
+.sub_app-wrap p {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+/*fixed-wrap*/
+
+.fixed-wrap {
+  width: 3rem;
+  height: 17rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2.25rem;
+  z-index: 2;
+}
+
+.fixed-top-btn {
+  color: #fff;
+  width: 3rem;
+  height: 2rem;
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  opacity: 0.6;
+  line-height: 1.5rem;
+}
+
+.fixed-icons::before {
+  background: #fff;
+  width: 0.05rem;
+  height: 6rem;
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  transform: translateY(-50%);
+  content: "";
+  opacity: 0.3;
+}
+
+.fixed-icons {
+  width: 3rem;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.fixed-icons a {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.5rem 0;
+  opacity: 0.6;
+}
+
+.icon-facebook {
+  background: url(../../assets/image/icons/facebook_icons.png) no-repeat center /
+    contain;
+}
+
+.icon-instagram {
+  background: url(../../assets/image/icons/insta_icons.png) no-repeat center /
+    contain;
+}
+
+.icon-pinterest {
+  background: url(../../assets/image/icons/pinter_icons.png) no-repeat center /
+    contain;
+}
+</style>
