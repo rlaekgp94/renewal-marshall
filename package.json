@@ -8,11 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@chenfengyuan/vue-carousel": "^1.0.6",
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "jquery.easing": "^1.4.1",
+    "sticky-sidebar": "^3.3.1",
     "swiper": "^6.5.9",
-    "vue": "^2.6.11"
+    "vue": "^2.6.12",
+    "vue-fullpage.js": "^0.1.7",
+    "vue-sticky-sidebar": "^1.0.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -21,7 +25,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,

@@ -3,7 +3,7 @@
     <AppHeader />
     <StoreHeadPhones />
     <AppFooter />
-    <AppFixedSide />
+    <!-- <AppFixedSide /> -->
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import AppHeader from "./components/common/AppHeader.vue";
 import StoreHeadPhones from "./layout/StoreHeadPhones.vue";
 import AppFooter from "./components/common/AppFooter.vue";
-import AppFixedSide from "./components/common/AppFixedSide.vue";
+// import AppFixedSide from "./components/common/AppFixedSide.vue";
 
 export default {
   name: "App",
@@ -19,7 +19,7 @@ export default {
     AppHeader,
     StoreHeadPhones,
     AppFooter,
-    AppFixedSide,
+    // AppFixedSide,
   },
 };
 </script>
