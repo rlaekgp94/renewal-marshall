@@ -1,0 +1,60 @@
+{
+  "headPhones": [
+    {
+      "itemName": "MODE II",
+      "itemPrice": "199.00",
+      "itemsReviews": "35 Reviews",
+      "id": "1",
+      "class": "sns-item",
+      "itemUrl": "items01-01"
+    },
+    {
+      "itemName": "MAJOR IV",
+      "itemPrice": "179.00",
+      "itemsReviews": "40 Reviews",
+      "id": "2",
+      "class": "sns-item",
+      "itemUrl": "items02-01"
+    },
+    {
+      "itemName": "MONITOR II A.N.C.",
+      "itemPrice": "359.00",
+      "itemsReviews": "47 Reviews",
+      "id": "3",
+      "class": "sns-item",
+      "itemUrl": "items03-01"
+    },
+    {
+      "itemName": "MAJOR III",
+      "itemPrice": "179.00",
+      "itemsReviews": "164 Reviews",
+      "id": "4",
+      "class": "sns-item",
+      "itemUrl": "items04-01"
+    },
+    {
+      "itemName": "MINOR II",
+      "itemPrice": "159.00",
+      "itemsReviews": "63 Reviews",
+      "id": "5",
+      "class": "sns-item",
+      "itemUrl": "items05-01"
+    },
+    {
+      "itemName": "MODE EQ",
+      "itemPrice": "99.00",
+      "itemsReviews": "88 Reviews",
+      "id": "6",
+      "class": "sns-item",
+      "itemUrl": "items06-01"
+    },
+    {
+      "itemName": "MODE",
+      "itemPrice": "75.00",
+      "itemsReviews": "37 Reviews",
+      "id": "7",
+      "class": "sns-item",
+      "itemUrl": "items07-01"
+    }
+  ]
+}

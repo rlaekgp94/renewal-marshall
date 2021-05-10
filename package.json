@@ -10,6 +10,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
+    "jquery.easing": "^1.4.1",
+    "swiper": "^6.5.9",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -33,7 +35,16 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": false
+        }
+      ]
+    }
   },
   "browserslist": [
     "> 1%",

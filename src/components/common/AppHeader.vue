@@ -183,9 +183,16 @@ export default {
 };
 </script>
 <style scoped>
+html {
+  font-size: 20px;
+}
+
+body {
+  font-size: 1rem;
+}
 header {
   background: rgba(15, 15, 16, 0);
-  width: 100vw;
+  width: 100%;
   height: 6rem;
   display: flex;
   justify-content: center;

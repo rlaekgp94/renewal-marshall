@@ -1,23 +1,28 @@
 <template>
-  <div id="#app">
+  <div id="app">
     <AppHeader />
+    <StoreHeadPhones />
     <AppFooter />
+    <AppFixedSide />
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/common/AppHeader.vue";
+import StoreHeadPhones from "./layout/StoreHeadPhones.vue";
 import AppFooter from "./components/common/AppFooter.vue";
+import AppFixedSide from "./components/common/AppFixedSide.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
+    StoreHeadPhones,
     AppFooter,
+    AppFixedSide,
   },
 };
 </script>
-<style src="./assets/css/reset.css"></style>
 <style>
 /*영문폰트*/
 /* poppins-500 - latin */
@@ -28,25 +33,17 @@ export default {
   src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
   /* IE9 Compat Modes */
 }
-
-html {
+/* 최상위 root에 font-size부여 */
+:root {
   font-size: 20px;
 }
 
 body {
   font-size: 1rem;
-  background-color: rgb(20, 36, 184);
   font-family: "Poppins";
 }
 
 #app {
   position: relative;
-  height: 300vh;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 </style>
