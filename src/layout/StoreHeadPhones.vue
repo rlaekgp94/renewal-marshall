@@ -104,4 +104,20 @@ export default {
   width: 100%;
   height: 100vh;
 }
+
+.items-wrap li:nth-child(1),
+.items-wrap li:nth-child(4),
+.items-wrap li:nth-child(5),
+.items-wrap li:nth-child(8) {
+  background: url(../assets/image/store/items-wrap-background-white.jpg)
+    no-repeat center / cover;
+}
+
+.items-wrap li:nth-child(2),
+.items-wrap li:nth-child(3),
+.items-wrap li:nth-child(6),
+.items-wrap li:nth-child(7) {
+  background: url(../assets/image/store/items-wrap-background-black.jpg)
+    no-repeat center / cover;
+}
 </style>
