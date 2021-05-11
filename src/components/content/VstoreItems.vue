@@ -32,9 +32,14 @@
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
     <div class="items-info">
-      <p>{{ headPhones.itemsReviews }}</p>
-      <p>{{ headPhones.itemName }}</p>
-      <p>&#36; {{ headPhones.itemPrice }}</p>
+      <div class="items-info-inner">
+        <p>{{ headPhones.itemName }}</p>
+        <ul>
+          <li>{{ headPhones.itemsType }}</li>
+          <li>&#36; {{ headPhones.itemPrice }}</li>
+        </ul>
+      </div>
+      <button type="button" class="items-cart-button">ADD TO CART</button>
     </div>
   </div>
 </template>
@@ -103,8 +108,38 @@ export default {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  font-size: 1.15rem;
+  justify-content: space-between;
+}
+.items-info-inner {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+
+.items-info p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.items-info ul li {
+  float: left;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.items-info ul li:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.items-cart-button {
+  width: 15rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 2.5rem;
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.03);
 }
 </style>
