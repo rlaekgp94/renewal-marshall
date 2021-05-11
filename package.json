@@ -12,9 +12,12 @@
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "jquery.easing": "^1.4.1",
+    "node-sass": "^6.0.0",
+    "sass-loader": "^10.2.0",
     "sticky-sidebar": "^3.3.1",
-    "swiper": "^6.5.9",
+    "swiper": "^5.3.7",
     "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-fullpage.js": "^0.1.7",
     "vue-sticky-sidebar": "^1.0.5"
   },

@@ -1,6 +1,6 @@
 <template>
   <div id="store">
-    <div class="category-wrap">
+    <aside class="category-wrap">
       <h2>SHOP BY CATEGORY</h2>
       <ul class="category-inner">
         <li>ALL</li>
@@ -10,7 +10,7 @@
         <li>IN-EAR</li>
         <li>NOISE CANCELLING</li>
       </ul>
-    </div>
+    </aside>
     <!-- category -->
     <section class="store-inner">
       <ul class="items-wrap">

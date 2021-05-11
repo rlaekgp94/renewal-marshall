@@ -145,6 +145,7 @@
 <script>
 import $ from "jquery";
 import Swiper from "swiper/bundle";
+import "@/assets/css/swiper-bundle.css";
 export default {
   name: "MainBanner",
   mounted() {

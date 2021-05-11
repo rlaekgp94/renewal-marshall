@@ -6,7 +6,9 @@
       "itemsReviews": "35 Reviews",
       "id": "1",
       "class": "sns-item",
-      "itemUrl": "items01-01"
+      "itemUrl01": "items01-01",
+      "itemUrl02": "items01-02",
+      "itemUrl03": "items01-03"
     },
     {
       "itemName": "MAJOR IV",
@@ -14,7 +16,9 @@
       "itemsReviews": "40 Reviews",
       "id": "2",
       "class": "sns-item",
-      "itemUrl": "items02-01"
+      "itemUrl01": "items02-01",
+      "itemUrl02": "items02-02",
+      "itemUrl03": "items02-03"
     },
     {
       "itemName": "MONITOR II A.N.C.",
@@ -22,7 +26,9 @@
       "itemsReviews": "47 Reviews",
       "id": "3",
       "class": "sns-item",
-      "itemUrl": "items03-01"
+      "itemUrl01": "items03-01",
+      "itemUrl02": "items03-02",
+      "itemUrl03": "items03-03"
     },
     {
       "itemName": "MAJOR III",
@@ -30,7 +36,9 @@
       "itemsReviews": "164 Reviews",
       "id": "4",
       "class": "sns-item",
-      "itemUrl": "items04-01"
+      "itemUrl01": "items04-01",
+      "itemUrl02": "items04-02",
+      "itemUrl03": "items04-03"
     },
     {
       "itemName": "MINOR II",
@@ -38,7 +46,9 @@
       "itemsReviews": "63 Reviews",
       "id": "5",
       "class": "sns-item",
-      "itemUrl": "items05-01"
+      "itemUrl01": "items05-01",
+      "itemUrl02": "items05-02",
+      "itemUrl03": "items05-03"
     },
     {
       "itemName": "MODE EQ",
@@ -46,7 +56,9 @@
       "itemsReviews": "88 Reviews",
       "id": "6",
       "class": "sns-item",
-      "itemUrl": "items06-01"
+      "itemUrl01": "items06-01",
+      "itemUrl02": "items06-02",
+      "itemUrl03": "items06-03"
     },
     {
       "itemName": "MODE",
@@ -54,7 +66,9 @@
       "itemsReviews": "37 Reviews",
       "id": "7",
       "class": "sns-item",
-      "itemUrl": "items07-01"
+      "itemUrl01": "items07-01",
+      "itemUrl02": "items07-02",
+      "itemUrl03": "items07-03"
     }
   ]
 }
