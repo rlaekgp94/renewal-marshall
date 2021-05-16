@@ -109,6 +109,7 @@ export default {
   height: auto;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 .items-info-inner {
   display: flex;
@@ -141,5 +142,6 @@ export default {
   font-weight: bold;
   margin-right: 2.5rem;
   box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.03);
+  cursor: pointer;
 }
 </style>

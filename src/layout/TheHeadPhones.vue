@@ -29,39 +29,43 @@ import $ from "jquery";
 import VstoreItems from "@/components/content/VstoreItems.vue";
 import HeadPhonesList from "@/assets/data/storeHeadPhones.json";
 export default {
-  name: "StoreHeadPhones",
+  name: "TheHeadPhones.vue",
   data() {
     return {
       headPhoneItems: HeadPhonesList.headPhones,
+      headPhoneStore: "",
+      winScroll: "",
+      fixedActive: true,
     };
   },
   components: {
     VstoreItems,
   },
   mounted() {
-    //config vars
-    const lagAmount = 50;
-    const maxSpeed = 100;
-    const frameRate = 20;
-    const selector = ".category-wrap";
-    //code
-    let scrollTop = 0;
-    let pinTop = 0;
-    let lastTime;
-    const updatePinPosition = (time) => {
-      if (!lastTime) lastTime = time;
-      let delta = time - lastTime;
-      if (delta >= frameRate) {
-        scrollTop = $(window).scrollTop();
-        var move = ((scrollTop - pinTop) * delta) / (lagAmount + delta);
-        var direction = move === 0 ? 0 : move / Math.abs(move);
-        pinTop = pinTop + Math.min(Math.abs(move), maxSpeed) * direction;
-        $(selector).css("transform", `translateY(${-move}px`);
-        lastTime = time;
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll: function() {
+      this.winScroll = window.pageYOffset;
+      this.headPhoneStore = $("#store").offset();
+      let footerTop = document.getElementById("footer").offsetTop;
+
+      if (
+        this.winScroll > this.headPhoneStore.top + 0 &&
+        footerTop > this.winScroll + window.innerHeight
+      ) {
+        document.getElementsByClassName("category-wrap")[0].style =
+          "position: fixed; top: 15rem; left: 3rem;";
+        this.fixedActive = false;
+
+        //console.log("change fixed");
+      } else if (this.winScroll < this.headPhoneStore.bottom - 300) {
+        document.getElementsByClassName("category-wrap")[0].style = "";
+      } else {
+        document.getElementsByClassName("category-wrap")[0].style =
+          "position: absolute; bottom: 15rem;  left: 3rem;";
       }
-      requestAnimationFrame(updatePinPosition);
-    };
-    requestAnimationFrame(updatePinPosition);
+    },
   },
 };
 </script>
@@ -83,7 +87,9 @@ export default {
   width: 20rem;
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
   top: 15rem;
   left: 3rem;
   transition: transform 500ms linear;
