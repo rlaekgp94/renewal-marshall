@@ -15,10 +15,11 @@
     "node-sass": "^6.0.0",
     "sass-loader": "^10.2.0",
     "sticky-sidebar": "^3.3.1",
-    "swiper": "^5.3.7",
+    "swiper": "^6.6.1",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",
     "vue-fullpage.js": "^0.1.7",
+    "vue-router": "^3.5.1",
     "vue-sticky-sidebar": "^1.0.5"
   },
   "devDependencies": {

@@ -1,25 +1,13 @@
 <template>
-  <div id="store">
+  <div id="Acc">
     <aside class="category-wrap">
-      <h2>SHOP BY CATEGORY</h2>
-      <ul class="category-inner">
-        <li><router-link to="/headphones">ALL</router-link></li>
-        <li><router-link to="/headphones">OVER-EAR</router-link></li>
-        <li><router-link to="/headphones">ON-EAR</router-link></li>
-        <li><router-link to="/headphones">TRUE WIRELESS</router-link></li>
-        <li><router-link to="/headphones">IN-EAR</router-link></li>
-        <li><router-link to="/headphones">NOISE CANCELLING</router-link></li>
-      </ul>
+      <h2>ACCESSORIES</h2>
+      <p>EXTRAS FOR YOUR<br />SPEAKERS AND HEADPHONES.</p>
     </aside>
-    <!-- category -->
     <section class="store-inner">
       <ul class="items-wrap">
-        <li v-for="(item, index) in headPhoneItems" :key="index">
-          <VstoreHeadPhonesItems
-            :headPhones="item"
-            :index="index"
-            class="items-list"
-          />
+        <li v-for="(item, index) in AccItems" :key="index">
+          <VstoreAccItems :Acc="item" :index="index" class="items-list" />
         </li>
       </ul>
       <!-- items-wrap -->
@@ -30,20 +18,20 @@
 
 <script>
 import $ from "jquery";
-import VstoreHeadPhonesItems from "@/components/content/VstoreHeadPhonesItems.vue";
-import HeadPhonesList from "@/assets/data/storeHeadPhones.json";
+import VstoreAccItems from "@/components/content/VstoreAccItems.vue";
+import AccList from "@/assets/data/storeAcc.json";
 export default {
-  name: "TheHeadPhones",
+  name: "TheAcc",
   data() {
     return {
-      headPhoneItems: HeadPhonesList.headPhones,
-      headPhoneStore: "",
+      AccItems: AccList.Acc,
+      AccStore: "",
       winScroll: "",
       fixedActive: true,
     };
   },
   components: {
-    VstoreHeadPhonesItems,
+    VstoreAccItems,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -51,11 +39,11 @@ export default {
   methods: {
     handleScroll: function() {
       this.winScroll = window.pageYOffset;
-      this.headPhoneStore = $("#store").offset();
+      this.AccStore = $("#Acc").offset();
       let footerTop = document.getElementById("footer").offsetTop;
 
       if (
-        this.winScroll > this.headPhoneStore.top + 0 &&
+        this.winScroll > this.AccStore.top + 0 &&
         footerTop > this.winScroll + window.innerHeight
       ) {
         document.getElementsByClassName("category-wrap")[0].style =
@@ -63,7 +51,7 @@ export default {
         this.fixedActive = false;
 
         //console.log("change fixed");
-      } else if (this.winScroll < this.headPhoneStore.bottom - 0) {
+      } else if (this.winScroll < this.AccStore.bottom - 0) {
         document.getElementsByClassName("category-wrap")[0].style = "";
       } else {
         document.getElementsByClassName("category-wrap")[0].style =
@@ -75,7 +63,7 @@ export default {
 </script>
 
 <style scoped>
-#store {
+#Acc {
   background: linear-gradient(
     90deg,
     rgba(15, 15, 16, 1),
@@ -100,23 +88,12 @@ export default {
 }
 
 .category-wrap h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
-
-.category-inner {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.15rem;
+.category-wrap p {
+  font-size: 1.25rem;
   line-height: 2rem;
-}
-
-.category-inner li:not(:last-child) {
-  margin-right: 2rem;
-}
-
-.category-inner li a {
-  color: #fff;
 }
 
 /* store-inner */

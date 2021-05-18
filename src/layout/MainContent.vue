@@ -296,6 +296,7 @@
 <script>
 import $ from "jquery";
 import Swiper from "swiper/bundle";
+import "swiper/swiper-bundle.css";
 export default {
   name: "MainBanner",
   mounted() {
@@ -324,7 +325,6 @@ export default {
       },
       pagination: {
         el: ".swiper-pagination",
-        type: "progressbar",
       },
     });
 
@@ -922,5 +922,17 @@ section {
   font-size: 0.75rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+.swiper-pagination {
+  margin-bottom: 2rem;
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.733);
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet-active {
+  background-color: #ffffff;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AppHeader />
-    <TheHeadPhones />
+    <router-view />
     <AppFooter />
     <!-- <AppFixedSide /> -->
   </div>
@@ -9,7 +9,6 @@
 
 <script>
 import AppHeader from "./components/common/AppHeader.vue";
-import TheHeadPhones from "./layout/TheHeadPhones.vue";
 import AppFooter from "./components/common/AppFooter.vue";
 // import AppFixedSide from "./components/common/AppFixedSide.vue";
 
@@ -17,7 +16,6 @@ export default {
   name: "App",
   components: {
     AppHeader,
-    TheHeadPhones,
     AppFooter,
     // AppFixedSide,
   },

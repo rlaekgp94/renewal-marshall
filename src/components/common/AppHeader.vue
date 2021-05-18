@@ -35,23 +35,41 @@
               <div class="sub_menu">
                 <ul>
                   <li>
-                    <a href="#">HEADPHONES</a>
+                    <router-link to="/headphones">HEADPHONES</router-link>
                     <ul class="sub_menu-category">
-                      <li><a href="#">OVER-EAR</a></li>
-                      <li><a href="#">ON-EAR</a></li>
-                      <li><a href="#">TRUE WIRELESS</a></li>
-                      <li><a href="#">IN-EAR</a></li>
-                      <li><a href="#">NOISE CANCELLING</a></li>
+                      <li>
+                        <router-link to="/headphones">OVER-EAR</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/headphones">ON-EAR</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/headphones"
+                          >TRUE WIRELESS</router-link
+                        >
+                      </li>
+                      <li>
+                        <router-link to="/headphones">IN-EAR</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/headphones"
+                          >NOISE CANCELLING</router-link
+                        >
+                      </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="#">SPEAKERS</a>
+                    <router-link to="/speakers">SPEAKERS</router-link>
                     <ul class="sub_menu-category">
-                      <li><a href="#">BLUETOOTH</a></li>
-                      <li><a href="#">PORTABLE</a></li>
+                      <li>
+                        <router-link to="/speakers">BLUETOOTH</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/speakers">PORTABLE</router-link>
+                      </li>
                     </ul>
                   </li>
-                  <li><a href="#">ACCESSORIES</a></li>
+                  <li><router-link to="/acc">ACCESSORIES</router-link></li>
                   <li>
                     <a href="#">BACKSTAGE</a>
                     <ul class="sub_menu-category">
@@ -100,13 +118,13 @@
 
       <div class="menu-logo">
         <h1>
-          <a href="#index.html"
+          <router-link to="/"
             ><img
               src="@/assets/image/logo.png"
               alt="logo"
               width="200"
               height="51"
-          /></a>
+          /></router-link>
         </h1>
       </div>
       <!--menu-logo-->

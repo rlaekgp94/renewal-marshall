@@ -141,11 +141,10 @@
     <!--banner-->
   </div>
 </template>
-
 <script>
 import $ from "jquery";
 import Swiper from "swiper/bundle";
-import "@/assets/css/swiper-bundle.css";
+import "swiper/swiper-bundle.css";
 export default {
   name: "MainBanner",
   mounted() {
@@ -226,7 +225,6 @@ export default {
 /*common*/
 
 /*.banner-video*/
-
 .banner-video {
   position: absolute;
   top: 10rem;
@@ -416,9 +414,10 @@ export default {
   transition: all 0.5s;
 }
 
-/*.swiper-pagination-bullet*/
+/* Swiper Custom */
 
-.swiper-pagination-bullet {
+/*.swiper-pagination-bullet*/
+.swiper-pagination >>> .swiper-pagination-bullet {
   width: 3rem;
   height: 3rem;
   text-align: center;
@@ -430,8 +429,43 @@ export default {
   text-align: left;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-pagination >>> .swiper-pagination-bullet-active {
   color: #fff;
   font-size: 1.5rem;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  /*page number*/
+  top: 16.5rem;
+  left: 3rem;
+  width: 3rem;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 17rem;
+}
+
+.swiper-button-prev {
+  left: 10rem;
+}
+.swiper-button-next {
+  left: 14rem;
 }
 </style>

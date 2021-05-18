@@ -1,22 +1,19 @@
 <template>
-  <div id="store">
+  <div id="speakers">
     <aside class="category-wrap">
       <h2>SHOP BY CATEGORY</h2>
       <ul class="category-inner">
-        <li><router-link to="/headphones">ALL</router-link></li>
-        <li><router-link to="/headphones">OVER-EAR</router-link></li>
-        <li><router-link to="/headphones">ON-EAR</router-link></li>
-        <li><router-link to="/headphones">TRUE WIRELESS</router-link></li>
-        <li><router-link to="/headphones">IN-EAR</router-link></li>
-        <li><router-link to="/headphones">NOISE CANCELLING</router-link></li>
+        <li><router-link to="/speakers">ALL</router-link></li>
+        <li><router-link to="/speakers">BLUETOOTH</router-link></li>
+        <li><router-link to="/speakers">PORTABLE</router-link></li>
       </ul>
     </aside>
     <!-- category -->
     <section class="store-inner">
       <ul class="items-wrap">
-        <li v-for="(item, index) in headPhoneItems" :key="index">
-          <VstoreHeadPhonesItems
-            :headPhones="item"
+        <li v-for="(item, index) in SpeakersItems" :key="index">
+          <VstoreSpeakersItems
+            :Speakers="item"
             :index="index"
             class="items-list"
           />
@@ -30,20 +27,20 @@
 
 <script>
 import $ from "jquery";
-import VstoreHeadPhonesItems from "@/components/content/VstoreHeadPhonesItems.vue";
-import HeadPhonesList from "@/assets/data/storeHeadPhones.json";
+import VstoreSpeakersItems from "@/components/content/VstoreSpeakersItems.vue";
+import SpeakersList from "@/assets/data/storeSpeakers.json";
 export default {
-  name: "TheHeadPhones",
+  name: "TheSpeakers",
   data() {
     return {
-      headPhoneItems: HeadPhonesList.headPhones,
-      headPhoneStore: "",
+      SpeakersItems: SpeakersList.Speakers,
+      SpeakersStore: "",
       winScroll: "",
       fixedActive: true,
     };
   },
   components: {
-    VstoreHeadPhonesItems,
+    VstoreSpeakersItems,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -51,11 +48,11 @@ export default {
   methods: {
     handleScroll: function() {
       this.winScroll = window.pageYOffset;
-      this.headPhoneStore = $("#store").offset();
+      this.SpeakersStore = $("#speakers").offset();
       let footerTop = document.getElementById("footer").offsetTop;
 
       if (
-        this.winScroll > this.headPhoneStore.top + 0 &&
+        this.winScroll > this.SpeakersStore.top + 0 &&
         footerTop > this.winScroll + window.innerHeight
       ) {
         document.getElementsByClassName("category-wrap")[0].style =
@@ -63,7 +60,7 @@ export default {
         this.fixedActive = false;
 
         //console.log("change fixed");
-      } else if (this.winScroll < this.headPhoneStore.bottom - 0) {
+      } else if (this.winScroll < this.SpeakersStore.bottom - 0) {
         document.getElementsByClassName("category-wrap")[0].style = "";
       } else {
         document.getElementsByClassName("category-wrap")[0].style =
@@ -75,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-#store {
+#speakers {
   background: linear-gradient(
     90deg,
     rgba(15, 15, 16, 1),
