@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import $ from "jquery";
+// import $ from "jquery";
 import VstoreSpeakersItems from "@/components/content/VstoreSpeakersItems.vue";
 import SpeakersList from "@/assets/data/storeSpeakers.json";
 export default {
@@ -46,27 +46,25 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
-    handleScroll: function() {
-      this.winScroll = window.pageYOffset;
-      this.SpeakersStore = $("#speakers").offset();
-      let footerTop = document.getElementById("footer").offsetTop;
-
-      if (
-        this.winScroll > this.SpeakersStore.top + 0 &&
-        footerTop > this.winScroll + window.innerHeight
-      ) {
-        document.getElementsByClassName("category-wrap")[0].style =
-          "position: fixed; top: 15rem; left: 3rem;";
-        this.fixedActive = false;
-
-        //console.log("change fixed");
-      } else if (this.winScroll < this.SpeakersStore.bottom - 0) {
-        document.getElementsByClassName("category-wrap")[0].style = "";
-      } else {
-        document.getElementsByClassName("category-wrap")[0].style =
-          "position: absolute; bottom: 15rem;  left: 3rem;";
-      }
-    },
+    // handleScroll: function() {
+    //   this.winScroll = window.pageYOffset;
+    //   this.SpeakersStore = $("#speakers").offset();
+    //   let footerTop = document.getElementById("footer").offsetTop;
+    //   if (
+    //     this.winScroll > this.SpeakersStore.top + 0 &&
+    //     footerTop > this.winScroll + window.innerHeight
+    //   ) {
+    //     document.getElementsByClassName("category-wrap")[0].style =
+    //       "position: fixed; top: 15rem; left: 3rem;";
+    //     this.fixedActive = false;
+    //     //console.log("change fixed");
+    //   } else if (this.winScroll < this.SpeakersStore.bottom - 0) {
+    //     document.getElementsByClassName("category-wrap")[0].style = "";
+    //   } else {
+    //     document.getElementsByClassName("category-wrap")[0].style =
+    //       "position: absolute; bottom: 15rem;  left: 3rem;";
+    //   }
+    // },
   },
 };
 </script>
@@ -88,7 +86,7 @@ export default {
   width: 20rem;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   /* top: 0;
   left: 0; */
   top: 15rem;
