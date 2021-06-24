@@ -14,6 +14,11 @@ import AppFooter from "./components/common/AppFooter.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      test: "",
+    };
+  },
   components: {
     AppHeader,
     AppFooter,
