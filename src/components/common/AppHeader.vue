@@ -1,15 +1,16 @@
 <template>
   <header>
     <transition name="fade">
-      <AppSidebar v-if="ActiveSidebar" />
+      <AppSidebar v-if="ActiveSidebar" @close="ActiveSidebarClose" />
     </transition>
     <div class="nav-wrap">
       <div class="nav-submenu">
-        <input type="checkbox" id="menuicon" @change="ActiveSidebarBtn" />
-        <label for="menuicon" class="total">
-          <span></span>
-        </label>
-        <!-- 사이더바 넣을자리 -->
+        <img
+          src="@/assets/image/icons/menu-icon.svg"
+          class="menu-icon"
+          alt="메뉴아이콘"
+          @click="ActiveSidebarBtn"
+        />
       </div>
       <!--nav-submenu-->
 
@@ -26,7 +27,7 @@
       </div>
       <!--menu-logo-->
 
-      <div class="menu-icon">
+      <div class="menu-icon-wrap">
         <ul>
           <li>
             <form class="search-form">
@@ -69,14 +70,12 @@
           </li>
         </ul>
       </div>
-      <!--menu-icon-->
+      <!--menu-icon-wrap-->
     </div>
   </header>
   <!--nav_wrap fixed고정-->
 </template>
 <script>
-import $ from "jquery";
-import AppSidebar from "@/components/common/AppSidebar.vue";
 export default {
   name: "Header",
   data() {
@@ -85,28 +84,15 @@ export default {
     };
   },
   components: {
-    AppSidebar,
+    AppSidebar: () => import("@/components/common/AppSidebar.vue"),
   },
   methods: {
     ActiveSidebarBtn: function() {
       this.ActiveSidebar = !this.ActiveSidebar;
     },
-  },
-  mounted() {
-    //서브메뉴
-    $(".total").click(function() {
-      $(this).toggleClass("on");
-    });
-
-    // $(".sub_menu a").click(function() {
-    //   console.log("하이");
-    // });
-
-    // let links = document.querySelectorAll(".sub_menu a");
-
-    // links.forEach((link) => {
-    //   link.addEventListener("click", () => (this.$data.ActiveSidebar = false));
-    // });
+    ActiveSidebarClose: function() {
+      this.ActiveSidebar = false;
+    },
   },
 };
 </script>
@@ -148,7 +134,15 @@ header {
 
 /*nav search*/
 
-.menu-icon ul {
+.menu-icon {
+  filter: invert(100%);
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  margin-left: -0.25rem;
+}
+
+.menu-icon-wrap ul {
   width: 22.5rem;
   height: 2rem;
   display: flex;
@@ -156,13 +150,13 @@ header {
   align-items: center;
 }
 
-.menu-icon li:first-child {
+.menu-icon-wrap li:first-child {
   width: 17rem;
   height: 2rem;
   position: relative;
 }
 
-.menu-icon li {
+.menu-icon-wrap li {
   height: 1.25rem;
 }
 
@@ -192,91 +186,6 @@ header {
   width: 1rem;
   height: 1rem;
 }
-
-/*menuicon*/
-
-input[id="menuicon"] {
-  display: none;
-}
-
-.total {
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  text-decoration: none;
-  cursor: pointer;
-  transform: translateY(-50%);
-}
-
-.total span {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 0.15rem;
-  background: rgba(255, 255, 255, 1);
-  color: transparent;
-  transition: all 0.5s;
-  border-radius: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.total span:before,
-.total span:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 0.15rem;
-  background: rgba(255, 255, 255, 1);
-  transition: all 0.5s;
-  border-radius: 0.5rem;
-}
-
-.total span:before {
-  top: -0.5rem;
-}
-
-.total span:after {
-  top: 0.5rem;
-}
-
-.total.on span {
-  background: rgba(255, 255, 255, 0);
-}
-
-.total.on span:before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.total.on span:after {
-  top: 0;
-  transform: rotate(-45deg);
-}
-
-/*checked*/
-input[id="menuicon"]:checked + label {
-  z-index: 11;
-}
-
-input[id="menuicon"]:checked + label span {
-  background: transparent;
-}
-
-input[id="menuicon"]:checked + label span:before {
-  background: #fff;
-}
-
-input[id="menuicon"]:checked + label span:after {
-  background: #fff;
-}
-/* 
-input[id="menuicon"]:checked + label + .sidebar-wrap {
-  display: block;
-} */
 
 .fade-enter-active,
 .fade-leave-active {

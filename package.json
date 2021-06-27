@@ -12,8 +12,6 @@
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "jquery.easing": "^1.4.1",
-    "node-sass": "^6.0.0",
-    "sass-loader": "^10.2.0",
     "sticky-sidebar": "^3.3.1",
     "swiper": "^6.6.1",
     "vue": "^2.6.12",
@@ -29,6 +27,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {

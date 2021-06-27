@@ -1,17 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import TheMain from "../layout/TheMain.vue";
-
-// 연결할 컴포넌트 import
-
-const TheHeadPhones = () =>
-  import(/* webpackChunName: "TheHeadPhones" */ "../layout/TheHeadPhones.vue");
-
-const TheSpeakers = () =>
-  import(/* webpackChunName: "TheSpeakers" */ "../layout/TheSpeakers.vue");
-
-const TheAcc = () =>
-  import(/* webpackChunName: "TheAcc" */ "../layout/TheAcc.vue");
 
 Vue.use(Router);
 
@@ -25,22 +13,31 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: TheMain,
+      component: () => import("../layout/TheMain.vue"),
     },
     {
       path: "/headphones",
       name: "headphones",
-      component: TheHeadPhones,
+      component: () => import("../layout/TheHeadPhones.vue"),
+      meta: { hideFixedSide: true },
+    },
+    {
+      path: "/headphones/headphones-over-ear",
+      name: "headphones-over-ear",
+      component: () => import("../view/TheHeadPhonesOverEar.vue"),
+      meta: { hideFixedSide: true },
     },
     {
       path: "/speakers",
       name: "speakers",
-      component: TheSpeakers,
+      component: () => import("../layout/TheSpeakers.vue"),
+      meta: { hideFixedSide: true },
     },
     {
       path: "/acc",
       name: "acc",
-      component: TheAcc,
+      component: () => import("../layout/TheAcc.vue"),
+      meta: { hideFixedSide: true },
     },
   ],
 });

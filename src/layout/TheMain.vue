@@ -5,16 +5,13 @@
   </div>
 </template>
 <script>
-import MainBanner from "@/layout/MainBanner";
-import MainContent from "@/layout/MainContent";
-
 export default {
   data() {
     return {};
   },
   components: {
-    MainBanner,
-    MainContent,
+    MainBanner: () => import("@/layout/MainBanner"),
+    MainContent: () => import("@/layout/MainContent"),
   },
 };
 </script>

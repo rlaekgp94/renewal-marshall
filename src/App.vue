@@ -3,26 +3,17 @@
     <AppHeader />
     <router-view />
     <AppFooter />
-    <!-- <AppFixedSide /> -->
+    <AppFixedSide v-if="!$route.meta.hideFixedSide" />
   </div>
 </template>
 
 <script>
-import AppHeader from "./components/common/AppHeader.vue";
-import AppFooter from "./components/common/AppFooter.vue";
-// import AppFixedSide from "./components/common/AppFixedSide.vue";
-
 export default {
   name: "App",
-  data() {
-    return {
-      test: "",
-    };
-  },
   components: {
-    AppHeader,
-    AppFooter,
-    // AppFixedSide,
+    AppHeader: () => import("./components/common/AppHeader.vue"),
+    AppFooter: () => import("./components/common/AppFooter.vue"),
+    AppFixedSide: () => import("./components/common/AppFixedSide.vue"),
   },
 };
 </script>

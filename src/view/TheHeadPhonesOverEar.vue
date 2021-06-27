@@ -5,7 +5,7 @@
       <ul class="category-inner">
         <li><router-link to="/headphones">ALL</router-link></li>
         <li>
-          <router-link to="/headphones/headphones-over-ear"
+          <router-link to="/headphones/headphones-over-ear" class="on-click"
             >OVER-EAR</router-link
           >
         </li>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import $ from "jquery";
 import VstoreHeadPhonesItems from "@/components/content/VstoreHeadPhonesItems";
 import VcontentScroll from "@/components/content/VcontentScroll";
 import HeadPhonesList from "@/assets/data/storeHeadPhones.json";
@@ -51,6 +52,21 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    const link = $(".category-inner li a"),
+      onLink = $(".on-click");
+
+    onLink.addClass("onlink");
+
+    link.not(onLink).hover(
+      function() {
+        $(this).addClass("onlink");
+        onLink.removeClass("onlink");
+      },
+      function() {
+        $(this).removeClass("onlink");
+        onLink.addClass("onlink");
+      }
+    );
   },
 };
 </script>
@@ -100,25 +116,25 @@ export default {
   li {
     width: 100%;
     a {
+      width: 70%;
       display: inline-block;
-      width: 80%;
       position: relative;
       color: rgb(150, 150, 150);
-      &:hover {
-        padding-left: 1.5rem;
-        transition: ease-in 0.35s;
-        color: #fff;
-        &:before {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          content: "";
-          display: inline-block;
-          animation: beforeLine 0.35s ease-in forwards;
-          height: 0.15rem;
-          background: #fff;
-        }
+    }
+    .onlink {
+      padding-left: 1.5rem;
+      transition: ease-in 0.2s;
+      color: #fff;
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        content: "";
+        display: inline-block;
+        animation: beforeLine 0.2s ease-in forwards;
+        height: 0.15rem;
+        background: #fff;
       }
     }
   }
