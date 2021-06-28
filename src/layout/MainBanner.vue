@@ -366,7 +366,7 @@ export default {
   width: 30rem;
   height: 20rem;
   position: absolute;
-  top: 25rem;
+  top: 24.75rem;
   left: 10rem;
   transform: translateY(-45%);
   color: #fff;

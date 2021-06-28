@@ -89,11 +89,9 @@ export default {
   methods: {
     ActiveSidebarBtn: function() {
       this.ActiveSidebar = !this.ActiveSidebar;
-      document.querySelector("body").style.overflow = "hidden";
     },
     ActiveSidebarClose: function() {
       this.ActiveSidebar = false;
-      document.querySelector("body").style.overflow = "visible";
     },
   },
 };

@@ -114,20 +114,20 @@
 </template>
 
 <script>
-// import $ from "jquery";
+import $ from "jquery";
 export default {
   name: "AppSidebar",
   props: {
     ActiveSidebar: Object,
   },
-  // mounted() {
-  //   //서브메뉴 스크롤막기
-  //   $(".sidebar-wrap").on("scroll touchmove mousewheel", function(e) {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //     return false;
-  //   });
-  // },
+  mounted() {
+    //서브메뉴 스크롤막기
+    $(".sidebar-wrap").on("scroll touchmove mousewheel", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  },
 };
 </script>
 
