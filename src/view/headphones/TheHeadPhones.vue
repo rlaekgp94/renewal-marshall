@@ -1,11 +1,13 @@
 <template>
-  <div id="store">
+  <div id="headphonesAll">
     <aside class="category-wrap">
       <h2>SHOP BY CATEGORY</h2>
       <ul class="category-inner">
-        <li><router-link to="/headphones">ALL</router-link></li>
         <li>
-          <router-link to="/headphones/headphones-over-ear" class="on-click"
+          <router-link to="/headphones" class="on-click">ALL</router-link>
+        </li>
+        <li>
+          <router-link to="/headphones/headphones-over-ear"
             >OVER-EAR</router-link
           >
         </li>
@@ -43,7 +45,6 @@ export default {
   data() {
     return {
       headPhoneItems: HeadPhonesList.headPhones,
-      headPhoneStore: "",
     };
   },
   components: {
@@ -71,7 +72,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#store {
+#headphonesAll {
   background: linear-gradient(
     90deg,
     rgba(15, 15, 16, 1),
@@ -147,24 +148,24 @@ export default {
   height: auto;
 }
 
+.items-list {
+  width: 100%;
+  height: 100vh;
+}
+
 .items-wrap {
   display: flex;
   flex-direction: column;
   li {
     &:nth-child(odd) {
-      background: url(../assets/image/store/items-wrap-background-white.jpg)
+      background: url(../../assets/image/store/items-wrap-background-white.jpg)
         no-repeat center / cover;
       color: #252525;
     }
     &:nth-child(even) {
-      background: url(../assets/image/store/items-wrap-background-black.jpg)
+      background: url(../../assets/image/store/items-wrap-background-black.jpg)
         no-repeat center / cover;
     }
   }
-}
-
-.items-list {
-  width: 100%;
-  height: 100vh;
 }
 </style>
