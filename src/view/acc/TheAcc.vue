@@ -3,6 +3,7 @@
     <aside class="category-wrap">
       <h2>ACCESSORIES</h2>
       <p>EXTRAS FOR YOUR<br />SPEAKERS AND HEADPHONES.</p>
+      <VcontentScroll />
     </aside>
     <section class="store-inner">
       <ul class="items-wrap">
@@ -17,50 +18,27 @@
 </template>
 
 <script>
-// import $ from "jquery";
 import VstoreAccItems from "@/components/content/VstoreAccItems.vue";
+import VcontentScroll from "@/components/content/VcontentScroll.vue";
 import AccList from "@/assets/data/storeAcc.json";
 export default {
   name: "TheAcc",
   data() {
     return {
       AccItems: AccList.Acc,
-      AccStore: "",
-      winScroll: "",
-      fixedActive: true,
     };
   },
   components: {
     VstoreAccItems,
+    VcontentScroll,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
-  methods: {
-    // handleScroll: function() {
-    //   this.winScroll = window.pageYOffset;
-    //   this.AccStore = $("#Acc").offset();
-    //   let footerTop = document.getElementById("footer").offsetTop;
-    //   if (
-    //     this.winScroll > this.AccStore.top + 0 &&
-    //     footerTop > this.winScroll + window.innerHeight
-    //   ) {
-    //     document.getElementsByClassName("category-wrap")[0].style =
-    //       "position: fixed; top: 15rem; left: 3rem;";
-    //     this.fixedActive = false;
-    //     //console.log("change fixed");
-    //   } else if (this.winScroll < this.AccStore.bottom - 0) {
-    //     document.getElementsByClassName("category-wrap")[0].style = "";
-    //   } else {
-    //     document.getElementsByClassName("category-wrap")[0].style =
-    //       "position: absolute; bottom: 15rem;  left: 3rem;";
-    //   }
-    // },
-  },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 #Acc {
   background: linear-gradient(
     90deg,
@@ -69,29 +47,30 @@ export default {
     rgba(15, 15, 16, 1)
   );
   width: 100%;
+  height: auto;
   color: #fff;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 .category-wrap {
   width: 20rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  /* top: 0;
-  left: 0; */
+  position: sticky;
+  margin-bottom: 15rem;
   top: 15rem;
   left: 3rem;
-  transition: transform 500ms linear;
-}
-
-.category-wrap h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.category-wrap p {
-  font-size: 1.25rem;
-  line-height: 2rem;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 5rem;
+  }
 }
 
 /* store-inner */
@@ -99,12 +78,6 @@ export default {
   width: 60%;
   color: #fff;
   height: auto;
-  float: right;
-}
-
-.items-wrap {
-  display: flex;
-  flex-direction: column;
 }
 
 .items-list {
@@ -112,14 +85,19 @@ export default {
   height: 100vh;
 }
 
-.items-wrap li:nth-child(odd) {
-  background: url(../../assets/image/store/items-wrap-background-white.jpg)
-    no-repeat center / cover;
-  color: #252525;
-}
-
-.items-wrap li:nth-child(even) {
-  background: url(../../assets/image/store/items-wrap-background-black.jpg)
-    no-repeat center / cover;
+.items-wrap {
+  display: flex;
+  flex-direction: column;
+  li {
+    &:nth-child(odd) {
+      background: url(../../assets/image/store/items-wrap-background-white.jpg)
+        no-repeat center / cover;
+      color: #252525;
+    }
+    &:nth-child(even) {
+      background: url(../../assets/image/store/items-wrap-background-black.jpg)
+        no-repeat center / cover;
+    }
+  }
 }
 </style>

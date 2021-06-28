@@ -1,10 +1,14 @@
 <template>
-  <div id="speakers">
+  <div id="speakersBluetooth">
     <aside class="category-wrap">
       <h2>SHOP BY CATEGORY</h2>
       <ul class="category-inner">
-        <li><router-link to="/speakers" class="on-click">ALL</router-link></li>
-        <li><router-link to="/speakers/bluetooth">BLUETOOTH</router-link></li>
+        <li><router-link to="/speakers">ALL</router-link></li>
+        <li>
+          <router-link to="/speakers/bluetooth" class="on-click"
+            >BLUETOOTH</router-link
+          >
+        </li>
         <li><router-link to="/speakers/portable">PORTABLE</router-link></li>
       </ul>
       <VcontentScroll />
@@ -32,7 +36,7 @@ import VstoreSpeakersItems from "@/components/content/VstoreSpeakersItems.vue";
 import VcontentScroll from "@/components/content/VcontentScroll.vue";
 import SpeakersList from "@/assets/data/storeSpeakers.json";
 export default {
-  name: "TheSpeakers",
+  name: "TheSpeakersBluetooth",
   data() {
     return {
       SpeakersItems: SpeakersList.Speakers,
@@ -64,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#speakers {
+#speakersBluetooth {
   background: linear-gradient(
     90deg,
     rgba(15, 15, 16, 1),
@@ -164,12 +168,12 @@ export default {
   display: flex;
   flex-direction: column;
   li {
-    &:nth-child(odd) {
+    &:nth-child(even) {
       background: url(../../assets/image/store/items-wrap-background-white.jpg)
         no-repeat center / cover;
       color: #252525;
     }
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background: url(../../assets/image/store/items-wrap-background-black.jpg)
         no-repeat center / cover;
     }

@@ -60,10 +60,10 @@
               <router-link to="/speakers">SPEAKERS</router-link>
               <ul class="sub_menu-category">
                 <li>
-                  <router-link to="/speakers">BLUETOOTH</router-link>
+                  <router-link to="/speakers/bluetooth">BLUETOOTH</router-link>
                 </li>
                 <li>
-                  <router-link to="/speakers">PORTABLE</router-link>
+                  <router-link to="/speakers/portable">PORTABLE</router-link>
                 </li>
               </ul>
             </li>

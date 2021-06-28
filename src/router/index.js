@@ -10,11 +10,13 @@ export default new Router({
     return { x: 0, y: 0 };
   },
   routes: [
+    // home
     {
       path: "/",
       name: "home",
       component: () => import("../view/TheMain"),
     },
+    // headphones and subPage 5
     {
       path: "/headphones",
       name: "headphones",
@@ -51,12 +53,26 @@ export default new Router({
       component: () => import("../view/headphones/TheHeadPhonesNoiseCan"),
       meta: { hideFixedSide: true },
     },
+    // speakers and subPage 2
     {
       path: "/speakers",
       name: "speakers",
       component: () => import("../view/speakers/TheSpeakers"),
       meta: { hideFixedSide: true },
     },
+    {
+      path: "/speakers/bluetooth",
+      name: "speakers-bluetooth",
+      component: () => import("../view/speakers/TheSpeakersBluetooth"),
+      meta: { hideFixedSide: true },
+    },
+    {
+      path: "/speakers/portable",
+      name: "speakers-portable",
+      component: () => import("../view/speakers/TheSpeakersPortable"),
+      meta: { hideFixedSide: true },
+    },
+    // Acc
     {
       path: "/acc",
       name: "acc",
