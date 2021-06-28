@@ -36,19 +36,23 @@
               <router-link to="/headphones">HEADPHONES</router-link>
               <ul class="sub_menu-category">
                 <li>
-                  <router-link to="/headphones">OVER-EAR</router-link>
+                  <router-link to="/headphones/over-ear">OVER-EAR</router-link>
                 </li>
                 <li>
-                  <router-link to="/headphones">ON-EAR</router-link>
+                  <router-link to="/headphones/on-ear">ON-EAR</router-link>
                 </li>
                 <li>
-                  <router-link to="/headphones">TRUE WIRELESS</router-link>
+                  <router-link to="/headphones/true-wireless"
+                    >TRUE WIRELESS</router-link
+                  >
                 </li>
                 <li>
-                  <router-link to="/headphones">IN-EAR</router-link>
+                  <router-link to="/headphones/in-ear">IN-EAR</router-link>
                 </li>
                 <li>
-                  <router-link to="/headphones">NOISE CANCELLING</router-link>
+                  <router-link to="/headphones/noise-cancelling"
+                    >NOISE CANCELLING</router-link
+                  >
                 </li>
               </ul>
             </li>

@@ -1,13 +1,11 @@
 <template>
-  <div id="headphonesOverEar">
+  <div id="headphonesNoiseCan">
     <aside class="category-wrap">
       <h2>SHOP BY CATEGORY</h2>
       <ul class="category-inner">
         <li><router-link to="/headphones">ALL</router-link></li>
         <li>
-          <router-link to="/headphones/over-ear" class="on-click"
-            >OVER-EAR</router-link
-          >
+          <router-link to="/headphones/over-ear">OVER-EAR</router-link>
         </li>
         <li>
           <router-link to="/headphones/on-ear">ON-EAR</router-link>
@@ -19,7 +17,7 @@
         </li>
         <li><router-link to="/headphones/in-ear">IN-EAR</router-link></li>
         <li>
-          <router-link to="/headphones/noise-cancelling"
+          <router-link to="/headphones/noise-cancelling" class="on-click"
             >NOISE CANCELLING</router-link
           >
         </li>
@@ -48,7 +46,7 @@ import $ from "jquery";
 import VstoreHeadPhonesItems from "@/components/content/VstoreHeadPhonesItems";
 import HeadPhonesList from "@/assets/data/storeHeadPhones.json";
 export default {
-  name: "TheHeadPhonesOverEar",
+  name: "TheHeadPhonesNoiseCan",
   data() {
     return {
       headPhoneItems: HeadPhonesList.headPhones,
@@ -78,7 +76,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#headphonesOverEar {
+#headphonesNoiseCan {
   background: linear-gradient(
     90deg,
     rgba(15, 15, 16, 1),

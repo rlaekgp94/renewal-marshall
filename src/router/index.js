@@ -22,9 +22,33 @@ export default new Router({
       meta: { hideFixedSide: true },
     },
     {
-      path: "/headphones/headphones-over-ear",
+      path: "/headphones/over-ear",
       name: "headphones-over-ear",
       component: () => import("../view/headphones/TheHeadPhonesOverEar"),
+      meta: { hideFixedSide: true },
+    },
+    {
+      path: "/headphones/on-ear",
+      name: "headphones-on-ear",
+      component: () => import("../view/headphones/TheHeadPhonesOnEar"),
+      meta: { hideFixedSide: true },
+    },
+    {
+      path: "/headphones/true-wireless",
+      name: "headphones-true-wireless",
+      component: () => import("../view/headphones/TheHeadPhonesWireless"),
+      meta: { hideFixedSide: true },
+    },
+    {
+      path: "/headphones/in-ear",
+      name: "headphones-in-ear",
+      component: () => import("../view/headphones/TheHeadPhonesInEar"),
+      meta: { hideFixedSide: true },
+    },
+    {
+      path: "/headphones/noise-cancelling",
+      name: "headphones-noise-cancelling",
+      component: () => import("../view/headphones/TheHeadPhonesNoiseCan"),
       meta: { hideFixedSide: true },
     },
     {

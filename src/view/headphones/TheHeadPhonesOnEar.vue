@@ -1,16 +1,16 @@
 <template>
-  <div id="headphonesOverEar">
+  <div id="headphonesOnEar">
     <aside class="category-wrap">
       <h2>SHOP BY CATEGORY</h2>
       <ul class="category-inner">
         <li><router-link to="/headphones">ALL</router-link></li>
         <li>
-          <router-link to="/headphones/over-ear" class="on-click"
-            >OVER-EAR</router-link
-          >
+          <router-link to="/headphones/over-ear">OVER-EAR</router-link>
         </li>
         <li>
-          <router-link to="/headphones/on-ear">ON-EAR</router-link>
+          <router-link to="/headphones/on-ear" class="on-click"
+            >ON-EAR</router-link
+          >
         </li>
         <li>
           <router-link to="/headphones/true-wireless"
@@ -24,13 +24,14 @@
           >
         </li>
       </ul>
+      <VcontentScroll />
     </aside>
     <!-- category -->
     <section class="store-inner">
       <ul class="items-wrap">
         <li v-for="(item, index) in headPhoneItems" :key="index">
           <VstoreHeadPhonesItems
-            v-if="item.id == 3"
+            v-if="item.id == 2 || item.id == 4"
             :headPhones="item"
             :index="index"
             class="items-list"
@@ -46,9 +47,10 @@
 <script>
 import $ from "jquery";
 import VstoreHeadPhonesItems from "@/components/content/VstoreHeadPhonesItems";
+import VcontentScroll from "@/components/content/VcontentScroll";
 import HeadPhonesList from "@/assets/data/storeHeadPhones.json";
 export default {
-  name: "TheHeadPhonesOverEar",
+  name: "TheHeadPhonesOnEar",
   data() {
     return {
       headPhoneItems: HeadPhonesList.headPhones,
@@ -56,6 +58,7 @@ export default {
   },
   components: {
     VstoreHeadPhonesItems,
+    VcontentScroll,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -78,7 +81,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#headphonesOverEar {
+#headphonesOnEar {
   background: linear-gradient(
     90deg,
     rgba(15, 15, 16, 1),
@@ -98,7 +101,7 @@ export default {
   display: flex;
   flex-direction: column;
   position: sticky;
-  margin-bottom: 13rem;
+  margin-bottom: 15rem;
   top: 15rem;
   left: 3rem;
   h2 {
@@ -178,10 +181,14 @@ export default {
   display: flex;
   flex-direction: column;
   li {
-    &:nth-child(odd) {
+    &:nth-child(2) {
       background: url(../../assets/image/store/items-wrap-background-white.jpg)
         no-repeat center / cover;
       color: #252525;
+    }
+    &:nth-child(4) {
+      background: url(../../assets/image/store/items-wrap-background-black.jpg)
+        no-repeat center / cover;
     }
   }
 }
